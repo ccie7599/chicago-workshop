@@ -1,21 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-workshop
+  name: sonos-api-nocode
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx-workshop
+      app: sonos-api-nocode
   template:
     metadata:
       labels:
-        app: nginx-workshop
+        app: sonos-api-nocode
     spec:
       containers:
-      - name: nginx-workshop
-        image: brianapley/nginx-workshop
+      - name: sonos-nocode-api
+        image: brianapley/sonos-api-nocode
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
-       
+        - containerPort: 1880
